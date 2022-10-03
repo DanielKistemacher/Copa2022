@@ -27,6 +27,8 @@
 ## 🔗 Links úteis 🔗
 
 - Tags HTML - https://allthetags.com/
+- Cores - https://coolors.co/
+- MDN - https://developer.mozilla.org/pt-BR/
 
 ## ✉ Contato
 danielkistemacher@gmail.com

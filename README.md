@@ -17,7 +17,7 @@
 
 ## ⚠ Informações do projeto
 
-- Dê seu palpite nos jogos da Copa do Mundo do Qatar.
+- Dê seu palpite nos jogos da Copa do Mundo do Catar.
 
 ## ✉ Contato
 danielkistemacher@gmail.com
