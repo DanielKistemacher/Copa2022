@@ -5,7 +5,7 @@
 
 ⚽ Projeto criado no programa Full Stack Challenge - Edição Copa do Mundo ⚽
 
-[🔗 Clique aqui para acessar.](https://danielkistemacher.github.io/MotoGP/)
+[🔗 Clique aqui para acessar.](https://danielkistemacher.github.io/Copa2022/)
 
 ## 🛠 Tecnologias
 
