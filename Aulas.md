@@ -6,6 +6,27 @@
     > Entender o que é desenvolvimento web. <br>
     > Códigos em HTML, CSS e JavaScript. <br>
     > Criar a estrutura inical do projeto.<br>
+<br>
+
+- Aula 02 - Usando as bibliotecas mais populares.
+    >
+    >
+
+- Aula 03 - Back-end, API e banco de dados.
+    >
+    >
+
+- Aula 04 - Integrando tudo.
+    >
+    >
+
+- Aula 05 - Aparando as arestas e mostrando ao mundo.
+    >
+    >
+
+## Links úteis
+
+- Tags HMTML - https://allthetags.com/
 
 ## ✉ Contato
 danielkistemacher@gmail.com
