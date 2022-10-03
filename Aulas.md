@@ -24,9 +24,9 @@
     >
     >
 
-## Links úteis
+## 🔗 Links úteis 🔗
 
-- Tags HMTML - https://allthetags.com/
+- Tags HTML - https://allthetags.com/
 
 ## ✉ Contato
 danielkistemacher@gmail.com
