@@ -17,12 +17,14 @@ export const Login = () => {
             </header>
 
             <main className="container max-w-xl p-4">
-                <div className="p-4">
-                    <Icon name="arrowLeft"/>
+                <div className="p-4 flex space-x-4 items-center">
+                    <a href="/">
+                        <Icon name="arrowLeft" className="h-6"/>
+                    </a>
                     <h2 className="text-xl font-bold">Entre na sua conta</h2>
                 </div>
 
-                <form className="space-y-6">
+                <form className="p-4 space-y-6">
                     <Input
                         type="text"
                         name="e-mail"

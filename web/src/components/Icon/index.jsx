@@ -1,4 +1,4 @@
-import arrowLeft from './svgs/arrowLeft.svg'
+import { ReactComponent as arrowLeft} from './svgs/arrow-left.svg'
 
 const icons = {
     arrowLeft
