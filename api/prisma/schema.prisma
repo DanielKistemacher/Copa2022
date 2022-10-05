@@ -3,17 +3,19 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
 }
 
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
 }
 
 model User {
   id String @id @default(cuid())
   name String
-  email String
+  email String @unique
   username String
   password String
 
@@ -37,8 +39,8 @@ model Game {
 
 model Hunch {
   id String @id @default(cuid())
-  userId User
-  gameId Game
+  userId String
+  gameId String
   teamA  Int
   teamB  Int
 
