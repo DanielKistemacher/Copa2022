@@ -9,3 +9,42 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id String @id @default(cuid())
+  name String
+  email String
+  username String
+  password String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  hunches Hunch[]
+}
+
+model Game {
+  id String @id @default(cuid())
+  teamA String
+  teamB String
+  gameTime DateTime
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  hunches Hunch[]
+}
+
+model Hunch {
+  id String @id @default(cuid())
+  userId User
+  gameId Game
+  teamA  Int
+  teamB  Int
+
+  user User @relation(fields: [userId], references: [id])
+  game Game @relation(fields: [gameId], references: [id])
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
