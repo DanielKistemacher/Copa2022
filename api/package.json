@@ -1,0 +1,14 @@
+{
+  "name": "api",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "author": {
+    "name": "Daniel Kistemacher",
+    "email": "danielkistemacher@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.13.4"
+  }
+}
