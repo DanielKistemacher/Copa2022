@@ -13,7 +13,7 @@ export const Dashboard = () => {
         const [hunches, fetchHunches] = useAsyncFn(async () => {
             const res = await axios({
                 method: 'get',
-                baseURL: 'http://localhost:3000',
+                baseURL: import.meta.env.VITE_API_URL,
                 url: `/${auth.user.username}`,
             })
 
@@ -28,7 +28,7 @@ export const Dashboard = () => {
         const [games, fetchGames] = useAsyncFn(async (params) => {
             const res = await axios({
                 method: 'get',
-                baseURL: 'http://localhost:3000',
+                baseURL: import.meta.env.VITE_API_URL,
                 url: '/games',
                 params
             })
@@ -58,7 +58,7 @@ export const Dashboard = () => {
             <header className="bg-red-500 text-white">
                 <div className="container max-w-3xl flex justify-between p-4">
                     <img src="/imgs/logo-red.svg" className="w-28 md:w-40"/>
-                    <a href="/profile">
+                    <a href={`/${auth?.user?.username}`}>
                         <Icon name="profile" className="w-10"/>
                     </a>
                 </div>

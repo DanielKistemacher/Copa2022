@@ -8,14 +8,14 @@ const validationSchema = yup.object().shape({
     awayTeamScore: yup.string().required()
 })
 
-export const Card = ({gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore, gameTime}) => {
+export const Card = ({ disabled, gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore, gameTime}) => {
     const [auth] = useLocalStorage('auth')
 
     const formik = useFormik({
         onSubmit: (values) => {
             axios({
                 method: 'post',
-                baseURL: 'http://localhost:3000',
+                baseURL: import.meta.env.VITE_API_URL,
                 url: '/hunches',
                 headers: {
                     authorization: `Bearer ${auth.accessToken}`
@@ -48,6 +48,7 @@ export const Card = ({gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore, 
                                 value={formik.values.homeTeamScore}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleSubmit}
+                                disabled={disabled}
                             />
                             <span className="text-red-500 fonte-bold">X</span>
                             <input 
@@ -57,6 +58,7 @@ export const Card = ({gameId, homeTeam, awayTeam, homeTeamScore, awayTeamScore, 
                                 value={formik.values.awayTeamScore}
                                 onChange={formik.handleChange}
                                 onBlur={formik.handleSubmit}
+                                disabled={disabled}
                             />
 
                             <img src={`/imgs/flags/${awayTeam}.png`}/>

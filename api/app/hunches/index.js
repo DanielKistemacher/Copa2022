@@ -60,24 +60,3 @@ export const create = async ctx => {
         return
     }
 }
-
-export const list = async ctx => {
-    const username = ctx.request.params.username
-
-    const user = await prisma.user.findUnique({
-        where: { username }
-    })
-
-    if (!user) {
-        ctx.status = 404
-        return
-    }
-
-    const hunches = await prisma.hunch.findMany({
-        where: {
-            userID: user.id
-        }
-    })
-
-    ctx.body = hunches
-}
