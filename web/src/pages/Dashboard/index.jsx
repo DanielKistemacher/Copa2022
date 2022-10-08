@@ -2,12 +2,12 @@ import { useState, useEffect} from 'react'
 import { Navigate } from 'react-router-dom'
 import { useLocalStorage, useAsyncFn } from 'react-use'
 import axios from 'axios'
-import { format } from 'date-fns'
+import { format, formatISO } from 'date-fns'
 
 import {Icon, Card, DateSelect} from '~/components'
 
 export const Dashboard = () => {
-        const [currentDate, setDate] = useState('2022-11-20T00:00:00Z')
+        const [currentDate, setDate] = useState(formatISO(new Date(2022, 10, 20)))
         const [auth] = useLocalStorage('auth', {})
 
         const [state, doFetch] = useAsyncFn(async (params) => {
@@ -60,10 +60,12 @@ export const Dashboard = () => {
                         {state.error && 'Ops! Algo deu errado.'}
 
                         {!state.loading && !state.error && state.value?.map(game => (
-                            <Card 
-                                homeTeam={{slug: game.homeTeam}}
-                                awayTeam={{slug: game.awayTeam}}
-                                match={{time: format(new Date(game.gameTime), 'H:mm') }}
+                            <Card
+                                key={game.id}
+                                gameId={game.id}
+                                homeTeam={game.homeTeam}
+                                awayTeam={game.awayTeam}
+                                gameTime={format(new Date(game.gameTime), 'H:mm')}
                             />
                         ))}
                     </div>
