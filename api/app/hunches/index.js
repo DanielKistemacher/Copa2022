@@ -1,5 +1,6 @@
 import jwt from 'jsonwebtoken'
 import { PrismaClient } from '@prisma/client'
+import { PrismaClientRustPanicError } from '@prisma/client/runtime'
 const prisma = new PrismaClient()
 
 export const create = async ctx => {
@@ -58,4 +59,25 @@ export const create = async ctx => {
         ctx.status = 401
         return
     }
+}
+
+export const list = async ctx => {
+    const username = ctx.request.params.username
+
+    const user = await prisma.user.findUnique({
+        where: { username }
+    })
+
+    if (!user) {
+        ctx.status = 404
+        return
+    }
+
+    const hunches = await prisma.hunch.findMany({
+        where: {
+            userID: user.id
+        }
+    })
+
+    ctx.body = hunches
 }
